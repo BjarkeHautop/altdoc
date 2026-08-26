@@ -88,7 +88,13 @@
         )
     })
 
-    lines <- c('---', 'title: "Function reference"', '---', "", unlist(sections))
+    lines <- c(
+        '---',
+        'title: "Function reference"',
+        '---',
+        "",
+        unlist(sections)
+    )
     lines <- lines[-length(lines)] # drop trailing blank line
 
     out_dir <- fs::path_join(c(docs_dir, "man"))

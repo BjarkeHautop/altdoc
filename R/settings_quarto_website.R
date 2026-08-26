@@ -118,13 +118,20 @@
                         lapply(config, function(block) {
                             list(
                                 section = block$title,
-                                contents = lapply(block$contents, function(name) {
-                                    topic <- topics[[name]]
-                                    list(
-                                        text = name,
-                                        file = paste0("man/", topic$basename, ".qmd")
-                                    )
-                                })
+                                contents = lapply(
+                                    block$contents,
+                                    function(name) {
+                                        topic <- topics[[name]]
+                                        list(
+                                            text = name,
+                                            file = paste0(
+                                                "man/",
+                                                topic$basename,
+                                                ".qmd"
+                                            )
+                                        )
+                                    }
+                                )
                             )
                         })
                     )
